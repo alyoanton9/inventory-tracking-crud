@@ -10,6 +10,11 @@ import (
 	"github.com/gorilla/mux"
 )
 
+func Main(w http.ResponseWriter, r *http.Request) {
+	json.NewEncoder(w).Encode(
+		"Server is running! Proceed to https://github.com/alyoanton9/inventory-tracking-crud for information on API")
+}
+
 func GetInventories(w http.ResponseWriter, r *http.Request) {
 	setContentType(w)
 

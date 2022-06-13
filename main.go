@@ -12,6 +12,7 @@ import (
 )
 
 func RegisterInventoryRoutes(router *mux.Router) {
+	router.HandleFunc("/", controllers.Main).Methods("GET")
 	router.HandleFunc("/api/inventory", controllers.GetInventories).Methods("GET")
 	router.HandleFunc("/api/inventory/{id}", controllers.GetInventoryById).Methods("GET")
 	router.HandleFunc("/api/inventory", controllers.CreateInventory).Methods("POST")

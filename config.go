@@ -7,7 +7,6 @@ import(
 
 type Config struct {
 	Port string `mapstructure:"port"`
-	ConnectionString string `mapstructure:"connection_string"`
 }
 
 var AppConfig *Config

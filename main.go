@@ -6,6 +6,7 @@ import (
 	"golang-crud-rest-api/database"
 	"log"
 	"net/http"
+	"os"
 
 	"github.com/gorilla/mux"
 )
@@ -22,7 +23,7 @@ func RegisterInventoryRoutes(router *mux.Router) {
 func main() {
 	LoadAppConfig()
 
-	database.Connect(AppConfig.ConnectionString)
+	database.Connect(os.Getenv("CONNECTION_STRING"))
 	database.Migrate()
 
 	router := mux.NewRouter().StrictSlash(true)
